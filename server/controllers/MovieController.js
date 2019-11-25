@@ -1,11 +1,105 @@
+const fetch  = require('node-fetch');
+const config = require('../config/config')
 
 module.exports = {
   async getMovie(req, res){
 
-      try {
-        res.json({messsage: `Sending movie.....${req.params.id}`})
-      } catch(err){
-          res.status(500).json({message: 'An error occured: ' + err});
-      }
-  }
+    let headers = {}
+    try {
+      const resp = await fetch(`${config.api_url}/movie/${req.params.movie_id}?api_key=${config.api_key}&language=en-US&page=1`, {
+        headers
+      });
+
+      const data  = await resp.json();
+      console.log(`Movie data ${JSON.stringify(data)}`);
+      if(data.errors && data.errors.length > 0){
+        //information not found
+        res.status(404).json('Information Not Found');
+    } else {
+        // information found send response
+        res.status(200).json(data);
+    }
+
+
+    } catch(err){
+      console.log(err);
+      res.status(500).json({message: 'Server error'});
+    }
+  },
+
+  async getNowPlaying(req, res){
+    console.log(`Getting now playing list....`);
+    let headers = {}
+    try {
+      const resp = await fetch(`${config.api_url}/movie/now_playing?api_key=${config.api_key}&language=en-US&page=1`, {
+        headers
+      });
+
+      const data  = await resp.json();
+      console.log(`Now Playing data ${JSON.stringify(data)}`);
+      if(data.errors && data.errors.length > 0){
+        //information not found
+        res.status(404).json('Information Not Found');
+    } else {
+        // information found send response
+        res.status(200).json(data);
+    }
+
+
+    } catch(err){
+      console.log(err);
+      res.status(500).json({message: 'Server error'});
+    }
+  },
+
+  async getPopularMovies(req, res){
+    console.log(`Getting popular list....`);
+    let headers = {}
+    try {
+      const resp = await fetch(`${config.api_url}/movie/popular?api_key=${config.api_key}&language=en-US&page=1`, {
+        headers
+      });
+
+      const data  = await resp.json();
+      console.log(`Popular data ${JSON.stringify(data)}`);
+      if(data.errors && data.errors.length > 0){
+        //information not found
+        res.status(404).json('Information Not Found');
+    } else {
+        // information found send response
+        res.status(200).json(data);
+    }
+
+
+    } catch(err){
+      console.log(err);
+      res.status(500).json({message: 'Server error'});
+    }
+  },
+
+  async getMovieCredits(req, res){
+
+    let headers = {}
+    try {
+      const resp = await fetch(`${config.api_url}/movie/${req.params.movie_id}/credits?api_key=${config.api_key}&language=en-US&page=1`, {
+        headers
+      });
+
+      const data  = await resp.json();
+      console.log(`Movie data ${JSON.stringify(data)}`);
+      if(data.errors && data.errors.length > 0){
+        //information not found
+        res.status(404).json('Information Not Found');
+    } else {
+        // information found send response
+        res.status(200).json(data);
+    }
+
+
+    } catch(err){
+      console.log(err);
+      res.status(500).json({message: 'Server error'});
+    }
+  },
+
 }
