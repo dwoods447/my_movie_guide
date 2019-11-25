@@ -45,7 +45,7 @@ import MovieService from '../../middleware/services/MovieService'
         const res = await MovieService.getMovie(id);
           console.log(`View Movie ${JSON.stringify(res.data)}`);
           this.movie = res.data.results;
-          this.$router.push({path: '/movie/' + id , params: this.movie});
+          this.$router.push({path: '/movies/movie/' + id , params: this.movie});
 
       }
     },

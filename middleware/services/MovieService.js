@@ -14,6 +14,9 @@ export default {
    },
    getMovieCredits(id){
     return api.get(`/movies/movie/${id}/credits`);
+   },
+   searchMovie(query){
+    return api.get(`/movies/movie/${query}`);
    }
 
 }

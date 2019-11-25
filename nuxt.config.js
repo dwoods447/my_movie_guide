@@ -14,6 +14,8 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', type: 'text/css', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://unpkg.com/vue-select@3.0.0/dist/vue-select.css' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://unpkg.com/vueperslides/dist/vueperslides.css'}
     ]
   },
   /*

@@ -6,7 +6,7 @@ const app = express()
 const bodyParser = require('body-parser');
 
 const movies = require('./routes/movies');
-
+const tvshows = require('./routes/tvshows');
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')
@@ -25,7 +25,9 @@ async function start () {
   } else {
     await nuxt.ready()
   }
+  
   app.use('/movies', movies);
+  app.use('/tvshows', tvshows);
 
   // Give nuxt middleware to express
   app.use(nuxt.render)

@@ -10,13 +10,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <nuxt-link to="/" class="nav-link">Home</nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
+            <nuxt-link to="/movies" class="nav-link">Movies</nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <nuxt-link to="/tvshows" class="nav-link">TVShows</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link to="#" class="nav-link">Discover</nuxt-link>
           </li>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -54,17 +57,25 @@
           </li> -->
         </ul>
       </div>
+      <div >
+      </div>
+      <SearchBar/>
     </div>
   </nav>
   </div>
 </template>
 
 <script>
+import SearchBar from '../components/search/SearchBar'
   export default {
+    components: {
+      SearchBar
+    },
+    data(){
+      return {
 
+      }
+
+    }
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
