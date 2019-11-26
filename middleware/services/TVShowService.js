@@ -9,5 +9,8 @@ export default {
    },
    getTVShowCredits(id){
     return api.get(`/tvshows/tvshow/${id}/credits`);
+   },
+   getTrailers(id){
+    return api.get(`/tvshows/tvshow/${id}/trailers`);
    }
 }

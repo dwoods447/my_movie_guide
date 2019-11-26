@@ -117,6 +117,28 @@ module.exports = {
       console.log(err);
       res.status(500).json({message: 'Server error'});
     }
+  },
+
+  async getTrailers(req, res){
+    let headers = {}
+    try {
+      const resp = await fetch(`${config.api_url}/movie/${req.params.id}/videos?api_key=${config.api_key}&language=en-US`, {
+        headers
+      });
+      const data  = await resp.json();
+      if(data.errors && data.errors.length > 0){
+        //information not found
+        res.status(404).json('Information Not Found');
+    } else {
+        // information found send response
+        res.status(200).json(data);
+    }
+
+
+    } catch(err){
+      console.log(err);
+      res.status(500).json({message: 'Server error'});
+    }
   }
 
 }

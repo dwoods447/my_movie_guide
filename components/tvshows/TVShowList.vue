@@ -7,7 +7,7 @@
           <a href="#"><img class="card-img-top" :src="image_url+item.poster_path" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
-              <a href="#" @click="viewTVshow(item.id)">{{item.title}}</a>
+              <a href="#" @click="viewTVshow(item.id)">{{item.original_name}}</a>
             </h4>
             <p class="card-text">{{item.overview}}</p>
           </div>

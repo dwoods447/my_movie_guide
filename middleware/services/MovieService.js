@@ -17,6 +17,10 @@ export default {
    },
    searchMovie(query){
     return api.get(`/movies/movie/${query}`);
+   },
+
+   getTrailers(id){
+    return api.get(`/movies/movie/${id}/trailers`);
    }
 
 }
