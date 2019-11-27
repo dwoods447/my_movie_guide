@@ -24,7 +24,7 @@
 
     },
     mounted(){
-      console.log(`Slides ${JSON.stringify(this.listItems)}`)
+      // console.log(`Slides ${JSON.stringify(this.listItems)}`)
     },
     data(){
       return {
@@ -34,7 +34,7 @@
 
     computed: {
       listItems(){
-        console.log(`cOMPUTED sLIDES ${JSON.stringify(this.list)}`);
+        // console.log(`cOMPUTED sLIDES ${JSON.stringify(this.list)}`);
         return this.list.slice(0 , this.numberToDisplay);
       }
     }

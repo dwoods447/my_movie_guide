@@ -59,7 +59,24 @@
       </div>
       <div >
       </div>
-      <SearchBar/>
+      <!-- <v-select v-model="searchTerm":options="searchResults"  style="width: 300px; background-color: #fff; border-radius: 6px;"/> -->
+       <!-- <multiselect v-on:input="debounceInput" :options="options"></multiselect> -->
+     
+      <div class="dropdown">
+            <div id="myDropdown" class="dropdown-content">
+              <input v-model="value" type="search" class="form-control ds-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off" data-siteurl="https://getbootstrap.com" data-docs-version="4.1" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;">
+              <span style="display: block; background-color: #fff;">
+                <ul >
+                  <li><a href="#"><img src="http://placehold.it/75x75">suggection !</a></li>
+                  <li><a href="#"><img src="http://placehold.it/75x75">suggection !</a></li>
+                  <li><a href="#"><img src="http://placehold.it/75x75">suggection !</a></li>
+                  <li><a href="#"><img src="http://placehold.it/75x75">suggection !</a></li>
+                  <li><a href="#"><img src="http://placehold.it/75x75">suggection !</a></li>
+                  <li><a href="#"><img src="http://placehold.it/75x75">suggection !</a></li>
+                </ul>
+              </span>
+          </div>
+      </div>
     </div>
   </nav>
   </div>
@@ -67,15 +84,54 @@
 
 <script>
 import SearchBar from '../components/search/SearchBar'
+import vSelect from 'vue-select'
+import MovieService from '../middleware/services/MovieService'
+import TVShowService from '../middleware/services/TVShowService'
+import Multiselect from 'vue-multiselect'
+import _ from 'lodash'
   export default {
     components: {
-      SearchBar
+      SearchBar,
+      'v-select':vSelect,
+      'multiselect': Multiselect
     },
     data(){
       return {
-
+          results: [],
+          searchTerm: "",
+          value: null,
+          options: ['list', 'of', 'options']
       }
 
-    }
+    },
+    methods: {
+        debounceInput: _.debounce(async function (value) {
+            console.log(`debounceInput searching for ... ${value}`);
+        }, 1000)
+    },
+     computed: {
+          searchResults(){
+              return this.results;
+          }
+    },
+    watch:{
+        value: _.debounce(async function(value){
+           console.log(`Value searching for ... ${value}`);
+            if(value.length > 4){
+              console.log(`Requesting `)
+                // const respMovie = await MovieService.searchMovie(value);
+                // const respTv  = await TVShowService.searchTVShow(value);
+                // if(respMovie.data.length > 0 || respTv.data.length > 0){
+                //   this.results = [...respMovie.data, ...respTv.data];
+                //   console.log(`TV Results returned: ${JSON.stringify(respMovie.data, null, 2)}`);
+                //   console.log(`Movie Results returned: ${JSON.stringify(respTv.data, null, 2)}`);
+                //   console.log(`Search Results returned: ${JSON.stringify(this.results, null, 2)}`);
+                // }
+            }
+        }, 1000)
+        
+      }
+
+  
   }
 </script>
