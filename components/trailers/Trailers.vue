@@ -1,7 +1,9 @@
 <template>
   <div>
-          <div v-for="trailer in trailers" :key="trailer.id" style="margin: 10px;">
-            <iframe   :src="youTubeURL+trailer.key" frameborder="0"></iframe>
+          <div>
+            <ul>
+              <li v-for="trailer in trailers" :key="trailer.id" style="display: inline-block; margin: 10px;"> <iframe   :src="youTubeURL+trailer.key" frameborder="0"></iframe></li>
+            </ul>
           </div>
   </div>
 </template>

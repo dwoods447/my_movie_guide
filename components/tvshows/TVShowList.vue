@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-4 col-sm-6 portfolio-item"  v-for="item in filteredList"  :key="item.id">
         <div class="card h-100" >
-          <a href="#"><img class="card-img-top" :src="image_url+item.poster_path" alt=""></a>
+          <a href="#" @click="viewTVshow(item.id)"><img class="card-img-top" :src="image_url+item.poster_path" alt=""></a>
           <div class="card-body">
             <h4 class="card-title">
               <a href="#" @click="viewTVshow(item.id)">{{item.original_name}}</a>
