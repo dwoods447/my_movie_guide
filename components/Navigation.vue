@@ -67,12 +67,12 @@
               <input v-model="value" type="search" class="form-control ds-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off" data-siteurl="https://getbootstrap.com" data-docs-version="4.1" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top; width: 390px;">
               <span style="display: inline; background-color: #fff; display: none;" >
                 <ul style="list-style-type: none; margin: 0; padding: 0;">
-                  <li><a href="#"><img src="http://placehold.it/75x75" style="margin: 2px;"><span style="margin: 2px;">suggection !</span></a></li>
-                  <li><a href="#"><img src="http://placehold.it/75x75" style="margin: 2px;"><span style="margin: 2px;">suggection !</span></a></li>
-                  <li><a href="#"><img src="http://placehold.it/75x75" style="margin: 2px;"><span style="margin: 2px;">suggection !</span></a></li>
-                  <li><a href="#"><img src="http://placehold.it/75x75" style="margin: 2px;"><span style="margin: 2px;">suggection !</span></a></li>
-                  <li><a href="#"><img src="http://placehold.it/75x75" style="margin: 2px;"><span style="margin: 2px;">suggection !</span></a></li>
-                  <li><a href="#"><img src="http://placehold.it/75x75" style="margin: 2px;"><span style="margin: 2px;">suggection !</span></a></li>
+                  <li><a href="#"><img src="https://placehold.it/75x75" style="margin: 2px;"><span style="margin: 2px;">suggection !</span></a></li>
+                  <li><a href="#"><img src="https://placehold.it/75x75" style="margin: 2px;"><span style="margin: 2px;">suggection !</span></a></li>
+                  <li><a href="#"><img src="https://placehold.it/75x75" style="margin: 2px;"><span style="margin: 2px;">suggection !</span></a></li>
+                  <li><a href="#"><img src="https://placehold.it/75x75" style="margin: 2px;"><span style="margin: 2px;">suggection !</span></a></li>
+                  <li><a href="#"><img src="https://placehold.it/75x75" style="margin: 2px;"><span style="margin: 2px;">suggection !</span></a></li>
+                  <li><a href="#"><img src="https://placehold.it/75x75" style="margin: 2px;"><span style="margin: 2px;">suggection !</span></a></li>
                 </ul>
               </span>
           </div>
