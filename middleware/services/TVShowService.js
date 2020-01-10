@@ -1,16 +1,16 @@
-import api from '../api'
+import axios from 'axios'
 
 export default {
   getTVShow(id){
-    return api.get(`/tvshows/tvshow/${id}`);
+    return axios.get(`/tvshows/tvshow/${id}`);
   },
   getPopularTVShows(){
-    return api.get(`/tvshows/popular`);
+    return axios.get(`/tvshows/popular`);
    },
    getTVShowCredits(id){
-    return api.get(`/tvshows/tvshow/${id}/credits`);
+    return axios.get(`/tvshows/tvshow/${id}/credits`);
    },
    getTrailers(id){
-    return api.get(`/tvshows/tvshow/${id}/trailers`);
+    return axios.get(`/tvshows/tvshow/${id}/trailers`);
    }
 }
