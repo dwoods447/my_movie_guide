@@ -52,6 +52,7 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: 'https://nuxt-movie-guide-app.herokuapp.com'+':'+process.env.port
   },
   /*
   ** Build configuration
@@ -72,12 +73,4 @@ module.exports = {
   myport: {
     port: process.env.port
   }
-}
-
-export default {
-  server: {
-    port: process.env.port, // default: 3000
-    host: '0.0.0.0' // default: localhost
-  }
-  // other configs
 }
