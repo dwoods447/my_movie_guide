@@ -59,18 +59,20 @@ export default {
     },
      async getPoularMovies(){
        const res = await MovieService.getPopularMovies();
-       console.log(`POPULAR CLIENT MOVIES ${JSON.stringify(res, null, 2)}`);
+
         //console.log('Popular:');
         //console.log(res.data.results);
         this.popular_movies = res.data.results;
+         console.log(`POPULAR CLIENT MOVIES ${JSON.stringify(res.data.results, null, 2)}`);
     },
 
      async getPoularTVshows(){
        const res = await TVShowService.getPopularTVShows();
-         console.log(`POPULAR CLIENT TVS ${JSON.stringify(res, null, 2)}`);
+
         //console.log('Popular:');
         //console.log(res.data.results);
         this.popular_tvshows = res.data.results;
+        console.log(`POPULAR CLIENT TVS ${JSON.stringify(res.data.results, null, 2)}`);
     },
   }
 }
