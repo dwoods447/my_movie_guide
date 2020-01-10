@@ -25,7 +25,7 @@ async function start () {
   } else {
     await nuxt.ready()
   }
-  
+
   app.use('/movies', movies);
   app.use('/tvshows', tvshows);
 
@@ -40,7 +40,7 @@ async function start () {
   app.listen(port, host)
 
   consola.ready({
-    message: `Server listening on http://${host}:${port}`,
+    message: `Server listening on https://${host}:${port}`,
     badge: true
   })
 }

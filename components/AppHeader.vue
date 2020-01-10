@@ -28,7 +28,7 @@
           </div>
         </div> -->
 
-        <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+        <div class="carousel-item" style="background-image: url('https://placehold.it/1900x1080')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Third Slide</h3>
             <p>This is a description for the third slide.</p>
