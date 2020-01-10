@@ -36,9 +36,9 @@ export default {
   },
   mounted(){
 
-    this.getNowPlaying();
-    this.getPoularMovies();
-    this.getPoularTVshows();
+    // this.getNowPlaying();
+    // this.getPoularMovies();
+    // this.getPoularTVshows();
   },
  data(){
    return {
@@ -56,7 +56,8 @@ export default {
        // console.log('Now playing:');
         //console.log(res.data.results);
         this.now_playing_movies = res.data.results;
-          console.log(`NOW PLAYING ${JSON.stringify(res.data.results, null, 2)}`);
+          console.log(`\r\n\r\n`);
+         // console.log(`NOW PLAYING ${JSON.stringify(res.data.results, null, 2)}`);
     },
      async getPoularMovies(){
        const res = await MovieService.getPopularMovies();
@@ -64,7 +65,8 @@ export default {
         //console.log('Popular:');
         //console.log(res.data.results);
         this.popular_movies = res.data.results;
-         console.log(`POPULAR CLIENT MOVIES ${JSON.stringify(res.data.results, null, 2)}`);
+         console.log(`\r\n\r\n`);
+         // console.log(`POPULAR CLIENT MOVIES ${JSON.stringify(res.data.results, null, 2)}`);
     },
 
      async getPoularTVshows(){
@@ -73,7 +75,8 @@ export default {
         //console.log('Popular:');
         //console.log(res.data.results);
         this.popular_tvshows = res.data.results;
-        console.log(`POPULAR CLIENT TVS ${JSON.stringify(res.data.results, null, 2)}`);
+         console.log(`\r\n\r\n`);
+       // console.log(`POPULAR CLIENT TVS ${JSON.stringify(res.data.results, null, 2)}`);
     },
   }
 }

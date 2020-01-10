@@ -34,7 +34,7 @@ module.exports = {
       });
 
       const data  = await resp.json();
-      console.log(`Now Playing ${JSON.stringify(data)}`);
+     //  console.log(`Now Playing ${JSON.stringify(data)}`);
       if(data.errors && data.errors.length > 0){
         //information not found
         res.status(404).json('Information Not Found');
@@ -58,7 +58,7 @@ module.exports = {
       });
 
       const data  = await resp.json();
-      console.log(`Popular ${JSON.stringify(data)}`);
+      // console.log(`Popular ${JSON.stringify(data)}`);
       if(data.errors && data.errors.length > 0){
         //information not found
         res.status(404).json('Information Not Found');
