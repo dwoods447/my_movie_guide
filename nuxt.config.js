@@ -53,8 +53,8 @@ module.exports = {
   */
   axios: {
     baseURL: process.env.port ? `https://nuxt-movie-guide-app.herokuapp.com` : `http://localhost`,
-    API_PREFIX: '/api',
-    API_PORT: process.env.port || 3000
+    API_PREFIX: 'api',
+    API_PORT: process.env.port ? process.env.port : 3000
   },
   /*
   ** Build configuration
