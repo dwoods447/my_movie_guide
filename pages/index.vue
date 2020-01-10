@@ -35,10 +35,10 @@ export default {
     TVShowList
   },
   mounted(){
-
-     this.getNowPlaying();
-     this.getPoularMovies();
-     this.getPoularTVshows();
+    console.log('Index mounted');
+    this.getNowPlaying();
+    this.getPoularMovies();
+    this.getPoularTVshows();
   },
  data(){
    return {
@@ -51,32 +51,47 @@ export default {
   methods: {
 
     async getNowPlaying(){
-       const res = await MovieService.getNowPlaying();
+      try {
+          const res = await MovieService.getNowPlaying();
+           this.now_playing_movies = res.data.results;
+             console.log(`${res.data.results}`);
+             // console.log('Now playing:');
+             // console.log(res.data.results);
+            // console.log(`NOW PLAYING ${JSON.stringify(res.data.results, null, 2)}`);
 
-       // console.log('Now playing:');
-        //console.log(res.data.results);
-        this.now_playing_movies = res.data.results;
-          console.log(`\r\n\r\n`);
-         // console.log(`NOW PLAYING ${JSON.stringify(res.data.results, null, 2)}`);
+      } catch(err){
+        console.log(`Error in the getNowPlaying function: ${err}`);
+      }
+
+
     },
      async getPoularMovies(){
-       const res = await MovieService.getPopularMovies();
-
+       try {
+        const res = await MovieService.getPopularMovies();
         //console.log('Popular:');
         //console.log(res.data.results);
         this.popular_movies = res.data.results;
          console.log(`\r\n\r\n`);
          // console.log(`POPULAR CLIENT MOVIES ${JSON.stringify(res.data.results, null, 2)}`);
+       } catch(err){
+          console.log(`Error in the getPoularMovies function: ${err}`);
+       }
+
     },
 
      async getPoularTVshows(){
-       const res = await TVShowService.getPopularTVShows();
+       try {
+           const res = await TVShowService.getPopularTVShows();
 
         //console.log('Popular:');
         //console.log(res.data.results);
         this.popular_tvshows = res.data.results;
          console.log(`\r\n\r\n`);
        // console.log(`POPULAR CLIENT TVS ${JSON.stringify(res.data.results, null, 2)}`);
+       } catch(err){
+          console.log(`Error in the getPoularTVshows function: ${err}`);
+       }
+
     },
   }
 }

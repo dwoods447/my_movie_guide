@@ -1,7 +1,7 @@
 {
   "name": "movie_guide",
   "version": "1.0.0",
-  "description": "My stupendous Nuxt.js project",
+  "description": "My Movie Guide",
   "author": "Demaria Woods",
   "private": true,
   "scripts": {

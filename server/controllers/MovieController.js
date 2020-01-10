@@ -27,6 +27,7 @@ module.exports = {
   },
 
   async getNowPlaying(req, res){
+    console.log(`Getting Now Playing movies...`);
     let headers = {}
     try {
       const resp = await fetch(`${config.api_url}/movie/now_playing?api_key=${config.api_key}&language=en-US&page=1`, {
@@ -51,13 +52,18 @@ module.exports = {
   },
 
   async getPopularMovies(req, res){
+    console.log(`Getting Popular movies...`);
+    console.log(`Making request to ${config.api_url}/movie/popular?api_key=${config.api_key}&language=en-US&page=1`)
     let headers = {}
     try {
       const resp = await fetch(`${config.api_url}/movie/popular?api_key=${config.api_key}&language=en-US&page=1`, {
         headers
       });
 
+
       const data  = await resp.json();
+
+      console.log(`Popular movies returned: ${data}`);
       // console.log(`Popular ${JSON.stringify(data)}`);
       if(data.errors && data.errors.length > 0){
         //information not found

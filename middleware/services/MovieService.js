@@ -6,11 +6,11 @@ export default {
     },
 
     getNowPlaying(){
-    return axios.get(`/movies/now_playing`);
+     return axios.get(`/movies/now_playing/current`);
    },
 
    getPopularMovies(){
-    return axios.get(`/movies/popular`);
+    return axios.get(`/movies/popular/movies`);
    },
    getMovieCredits(id){
     return axios.get(`/movies/movie/${id}/credits`);

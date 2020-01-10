@@ -56,7 +56,7 @@
           console.log(`Image Path: ${path}`);
           return 'https://image.tmdb.org/t/p/original' + path;
         } else {
-          return 'http://placehold.it/300x300'
+          return 'https://placehold.it/300x300'
         }
       }
     }

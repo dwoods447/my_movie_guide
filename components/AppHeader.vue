@@ -59,7 +59,10 @@
       MovieSlide
     },
     created(){
-        this.getPoularMovies();
+
+    },
+    mounted(){
+       this.getPoularMovies();
     },
     data(){
       return {
@@ -67,11 +70,17 @@
       }
     },
     methods: {
+
       async getPoularMovies(){
-       const res = await MovieService.getPopularMovies();
+         try {
+            const res = await MovieService.getPopularMovies();
         //console.log('Popular:');
        // console.log(res.data.results);
         this.now_playing_movies = res.data.results;
+      } catch(err){
+        console.log(`Error in the getPoularMovies function Header: ${err}`);
+      }
+
       },
     }
   }
