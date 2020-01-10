@@ -36,9 +36,9 @@ export default {
   },
   mounted(){
 
-    // this.getNowPlaying();
-    // this.getPoularMovies();
-    // this.getPoularTVshows();
+     this.getNowPlaying();
+     this.getPoularMovies();
+     this.getPoularTVshows();
   },
  data(){
    return {
