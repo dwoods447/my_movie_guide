@@ -52,10 +52,11 @@ export default {
 
     async getNowPlaying(){
        const res = await MovieService.getNowPlaying();
-       console.log(`NOW PLAYING ${JSON.stringify(res, null, 2)}`);
+
        // console.log('Now playing:');
         //console.log(res.data.results);
         this.now_playing_movies = res.data.results;
+          console.log(`NOW PLAYING ${JSON.stringify(res.data.results, null, 2)}`);
     },
      async getPoularMovies(){
        const res = await MovieService.getPopularMovies();
