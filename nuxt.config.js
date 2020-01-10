@@ -73,3 +73,11 @@ module.exports = {
     port: process.env.port
   }
 }
+
+export default {
+  server: {
+    port: process.env.port, // default: 3000
+    host: '0.0.0.0' // default: localhost
+  }
+  // other configs
+}
