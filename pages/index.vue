@@ -52,12 +52,14 @@ export default {
 
     async getNowPlaying(){
        const res = await MovieService.getNowPlaying();
+       console.log(`NOW PLAYING ${JSON.stringify(res, null, 2)}`);
        // console.log('Now playing:');
         //console.log(res.data.results);
         this.now_playing_movies = res.data.results;
     },
      async getPoularMovies(){
        const res = await MovieService.getPopularMovies();
+       console.log(`POPULAR CLIENT MOVIES ${JSON.stringify(res, null, 2)}`);
         //console.log('Popular:');
         //console.log(res.data.results);
         this.popular_movies = res.data.results;
@@ -65,6 +67,7 @@ export default {
 
      async getPoularTVshows(){
        const res = await TVShowService.getPopularTVShows();
+         console.log(`POPULAR CLIENT TVS ${JSON.stringify(res, null, 2)}`);
         //console.log('Popular:');
         //console.log(res.data.results);
         this.popular_tvshows = res.data.results;
