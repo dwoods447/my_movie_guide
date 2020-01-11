@@ -16,7 +16,7 @@ async function start () {
   // Init Nuxt.js
   const nuxt = new Nuxt(config)
 
-  const { host, port } = nuxt.options.server
+  let { host, port } = nuxt.options.server
 
   // Build only in dev mode
   if (config.dev) {
@@ -35,7 +35,10 @@ async function start () {
   app.use(bodyParser.json());
 
 
+  port = 3001;
 
+  console.log(`PORT NUMBER IS : ${port}`);
+  console.log(`HOST IS ${host}`);
   // Listen the server
   app.listen(port, host)
 

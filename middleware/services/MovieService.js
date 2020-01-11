@@ -1,26 +1,26 @@
 import axios from 'axios'
-
+import API from './API';
 export default {
     getMovie(id){
-     return axios.get(`/movies/movie/${id}`);
+     return API.get(`/movies/movie/${id}`);
     },
 
     getNowPlaying(){
-     return axios.get(`/movies/now_playing/current`);
+     return API.get(`/movies/now_playing/current`);
    },
 
    getPopularMovies(){
-    return axios.get(`/movies/popular/movies`);
+    return API.get(`/movies/popular/movies`);
    },
    getMovieCredits(id){
-    return axios.get(`/movies/movie/${id}/credits`);
+    return API.get(`/movies/movie/${id}/credits`);
    },
    searchMovie(query){
-    return axios.get(`/movies/movie/${query}`);
+    return API.get(`/movies/movie/${query}`);
    },
 
    getTrailers(id){
-    return axios.get(`/movies/movie/${id}/trailers`);
+    return API.get(`/movies/movie/${id}/trailers`);
    }
 
 }
