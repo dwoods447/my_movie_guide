@@ -2,7 +2,7 @@ const fetch  = require('node-fetch');
 const config = require('../config/config');
 
 module.exports = {
-  async getMovie(req, res){
+  async getMovie(req, res, next){
 
     let headers = {}
     try {
@@ -23,10 +23,11 @@ module.exports = {
     } catch(err){
       console.log(err);
       res.status(500).json({message: 'Server error'});
+      next(err);
     }
   },
 
-  async getNowPlaying(req, res){
+  async getNowPlaying(req, res, next){
     console.log(`Getting Now Playing movies...`);
     let headers = {}
     try {
@@ -42,16 +43,18 @@ module.exports = {
     } else {
         // information found send response
         res.status(200).json(data);
+
     }
 
 
     } catch(err){
       console.log(err);
       res.status(500).json({message: 'Server error'});
+      next(err);
     }
   },
 
-  async getPopularMovies(req, res){
+  async getPopularMovies(req, res, next){
     console.log(`Getting Popular movies...`);
     console.log(`Making request to ${config.api_url}/movie/popular?api_key=${config.api_key}&language=en-US&page=1`)
     let headers = {}
@@ -77,10 +80,11 @@ module.exports = {
     } catch(err){
       console.log(err);
       res.status(500).json({message: 'Server error'});
+      next(err);
     }
   },
 
-  async getMovieCredits(req, res){
+  async getMovieCredits(req, res, next){
 
     let headers = {}
     try {
@@ -101,10 +105,11 @@ module.exports = {
     } catch(err){
       console.log(err);
       res.status(500).json({message: 'Server error'});
+      next(err);
     }
   },
 
-  async searchMovie(req, res){
+  async searchMovie(req, res, next){
     console.log(`Searching movie.....${req.params.q}`);
     let headers = {}
     try {
@@ -124,10 +129,11 @@ module.exports = {
     } catch(err){
       console.log(err);
       res.status(500).json({message: 'Server error'});
+      next(err);
     }
   },
 
-  async getTrailers(req, res){
+  async getTrailers(req, res, next){
     let headers = {}
     try {
       const resp = await fetch(`${config.api_url}/movie/${req.params.id}/videos?api_key=${config.api_key}&language=en-US`, {
@@ -142,10 +148,10 @@ module.exports = {
         res.status(200).json(data);
     }
 
-
     } catch(err){
       console.log(err);
       res.status(500).json({message: 'Server error'});
+      next(err);
     }
   }
 

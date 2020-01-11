@@ -1,26 +1,25 @@
-import axios from 'axios'
-import API from './API';
+import api from './API'
 export default {
     getMovie(id){
-     return API.get(`/movies/movie/${id}`);
+     return api.get(`/movie/${id}`);
     },
 
     getNowPlaying(){
-     return API.get(`/movies/now_playing/current`);
+     return api.get(`/now_playing/current`);
    },
 
    getPopularMovies(){
-    return API.get(`/movies/popular/movies`);
+    return api.get(`/popular/movies`);
    },
    getMovieCredits(id){
-    return API.get(`/movies/movie/${id}/credits`);
+    return api.get(`/movie/${id}/credits`);
    },
    searchMovie(query){
-    return API.get(`/movies/movie/${query}`);
+    return api.get(`/movie/${query}`);
    },
 
    getTrailers(id){
-    return API.get(`/movies/movie/${id}/trailers`);
+    return api.get(`/movie/${id}/trailers`);
    }
 
 }

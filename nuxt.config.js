@@ -1,3 +1,4 @@
+const bodyParser = require('body-parser');
 module.exports = {
   mode: 'universal',
   /*
@@ -45,15 +46,11 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {
-    baseURL: process.env.NODE_ENV ? 'http://localhost:3000' : 'https://nuxt-movie-guide-app.herokuapp.com'
-  },
   /*
   ** Build configuration
   */
@@ -70,8 +67,10 @@ module.exports = {
     }
   },
 
-
+  serverMiddleware: [
+    bodyParser.json(),
+    '~/api'
+  ]
 
 
 }
-
