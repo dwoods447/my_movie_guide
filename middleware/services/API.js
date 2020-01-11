@@ -1,11 +1,12 @@
 import axios from 'axios'
-import development from '../../nuxt.config'
 
-console.log(`development value ${JSON.stringify(development.envoirment)}`)
+
+
 let api;
-if(development.envoirment){
+if(process.env.NODE_ENV !== 'production'){
+   console.log(`The port number ${process.env.PORT}`);
   api = axios.create({
-    baseURL: 'http://localhost:3001'
+    baseURL: 'http://localhost:3000'
   })
 } else {
   api = axios.create({

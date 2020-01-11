@@ -1,11 +1,9 @@
-let development = process.env.NODE_ENV !== 'production'
-
 module.exports = {
   mode: 'universal',
   /*
   ** Headers of the page
   */
-  envoirment: development,
+  envoirment: process.env.NODE_ENV,
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -54,7 +52,7 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: development ? 'http://localhost:3001' : 'https://nuxt-movie-guide-app.herokuapp.com'
+    baseURL: process.env.NODE_ENV ? 'http://localhost:3000' : 'https://nuxt-movie-guide-app.herokuapp.com'
   },
   /*
   ** Build configuration
@@ -76,7 +74,4 @@ module.exports = {
 
 
 }
-
-
-
 

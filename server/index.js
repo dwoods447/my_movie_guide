@@ -12,13 +12,13 @@ const tvshows = require('./routes/tvshows');
 const config = require('../nuxt.config.js')
 config.dev = process.env.NODE_ENV !== 'production'
 
+
 async function start () {
   // Init Nuxt.js
+  // Build only in dev mode
   const nuxt = new Nuxt(config)
-
   let { host, port } = nuxt.options.server
 
-  // Build only in dev mode
   if (config.dev) {
     const builder = new Builder(nuxt)
     await builder.build()
@@ -34,18 +34,14 @@ async function start () {
 
   app.use(bodyParser.json());
 
-
-  port = 3001;
-
   console.log(`PORT NUMBER IS : ${port}`);
   console.log(`HOST IS ${host}`);
   // Listen the server
   app.listen(port, host)
-
   consola.ready({
-    message: `Server listening from server/index.js on https://${host}:${port}`,
+    message: `Server listening from server/index.js on https://${host}:${process.env.PORT || port}`,
     badge: true
   })
 }
-start()
+start();
 
