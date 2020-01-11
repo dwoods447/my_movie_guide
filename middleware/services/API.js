@@ -9,6 +9,7 @@ if(process.env.NODE_ENV !== 'production'){
     baseURL: 'http://localhost:3000'
   })
 } else {
+  console.log(`The port number ${process.env.PORT}`);
   api = axios.create({
     baseURL: 'https://nuxt-movie-guide-app.herokuapp.com'
   })
